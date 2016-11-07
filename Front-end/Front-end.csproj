@@ -66,22 +66,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="前端基础\Html+Css\Css3\HtmlPage1.html" />
+    <Content Include="前端基础\Html+Css\Html5新特性\HtmlPage1.html" />
+    <Content Include="前端基础\Html+Css\案例\仿淘宝移动首页布局\HtmlPage1.html" />
+    <Content Include="前端基础\Html+Css\案例\仿淘宝首页布局\HtmlPage1.html" />
+    <Content Include="前端基础\JavaScript\JavaScript高级编程 第三版读记\HtmlPage1.html" />
+    <Content Include="前端基础\JQurey\HtmlPage1.html" />
+    <Content Include="前端框架\Angular\HtmlPage1.html" />
+    <Content Include="前端框架\React\HtmlPage1.html" />
+    <Content Include="前端框架\RequireJS\HtmlPage1.html" />
+    <Content Include="前端自动化\HtmlPage1.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="前端基础\Html+Css\Css3\" />
-    <Folder Include="前端基础\Html+Css\Html5新特性\" />
-    <Folder Include="前端基础\Html+Css\案例\仿淘宝移动首页布局\" />
-    <Folder Include="前端基础\Html+Css\案例\仿淘宝首页布局\" />
-    <Folder Include="前端基础\JavaScript\JavaScript高级编程 第三版读记\" />
-    <Folder Include="前端基础\JQurey\" />
-    <Folder Include="前端框架\Angular\" />
-    <Folder Include="前端框架\React\" />
-    <Folder Include="前端框架\RequireJS\" />
-    <Folder Include="前端自动化\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
