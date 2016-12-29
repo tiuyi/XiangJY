@@ -42,16 +42,26 @@ namespace _12306
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            #region 模拟验证码
+            IDictionary<string, string> dic1 = new Dictionary<string, string>();
+            dic1["randCode"] = randCode.TrimEnd(',').Replace(",", "%2C"); 
+            dic1["rand"] = "sjrand";
+            
+            HttpWebResponse result4 = WebTools.CreatePostHttpResponse("https://kyfw.12306.cn/otn/passcodeNew/checkRandCodeAnsyn", dic1, null, null, Encoding.Default, co);
+            #endregion
+
+            #region 模拟登陆
             IDictionary<string, string> dic = new Dictionary<string, string>();
             dic["loginUserDTO.user_name"] = "583477919%40qq.com"; //"583477919@qq.com";
             dic["userDTO.password"] = "qaz123";
-            dic["randCode"] =randCode.TrimEnd(',').Replace(",","%2C");
+            dic["randCode"] = randCode.TrimEnd(',').Replace(",", "%2C");
 
             HttpWebResponse result = WebTools.CreatePostHttpResponse("https://kyfw.12306.cn/otn/login/loginAysnSuggest", dic, null, null, Encoding.Default, co);
             SaveCookie(result.Headers.Get("Set-Cookie"));
             Stream stream = result.GetResponseStream();     //获取流，该流用于读取来自服务器的响应的体
             StreamReader readerOfStream = new StreamReader(stream, Encoding.GetEncoding("utf-8"));
-           
+
 
             string strHTML = readerOfStream.ReadToEnd();   //读取来自流的当前位置到结尾的所有字符。
             readerOfStream.Close();
@@ -66,7 +76,8 @@ namespace _12306
             string strHTML1 = readerOfStream1.ReadToEnd();   //读取来自流的当前位置到结尾的所有字符。
             readerOfStream1.Close();
             stream1.Close();
-            result1.Close();
+            result1.Close(); 
+            #endregion
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -105,5 +116,13 @@ namespace _12306
                 }
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
+
+    
 }

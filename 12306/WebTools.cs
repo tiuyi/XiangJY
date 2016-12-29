@@ -21,7 +21,7 @@ namespace _12306
     /// </summary>  
     public class WebTools  
     {  
-        private static readonly string DefaultUserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)";  
+        private static readonly string DefaultUserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";  
         /// <summary>  
         /// 创建GET方式的HTTP请求  
         /// </summary>  
@@ -87,7 +87,7 @@ namespace _12306
                 request = WebRequest.Create(url) as HttpWebRequest;  
             }  
             request.Method = "POST";  
-            request.ContentType = "application/x-www-form-urlencoded";  
+            request.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";  
               
             if (!string.IsNullOrEmpty(userAgent))  
             {  
@@ -96,8 +96,15 @@ namespace _12306
             else 
             {  
                 request.UserAgent = DefaultUserAgent;  
-            }  
- 
+            }
+            request.Headers.Add("Origin", "https://kyfw.12306.cn");
+            request.Referer = "https://kyfw.12306.cn/otn/login/init";
+            //Accept: */*   Accept-Encoding: gzip, deflate   Accept-Language: zh-CN,zh;q=0.8   User-Agent:    X-Requested-With: XMLHttpRequest
+            request.Accept = "*/*";
+            request.Headers.Add("Accept-Encoding", "gzip, deflate");
+            request.Headers.Add("Accept-Language", "zh-CN,zh;q=0.8");
+            request.Headers.Add("X-Requested-With", "XMLHttpRequest");
+            
             if (timeout.HasValue)  
             {  
                 request.Timeout = timeout.Value;  
