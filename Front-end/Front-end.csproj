@@ -65,6 +65,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="12306抢票\官网资料\common_js.js" />
+    <Content Include="12306抢票\官网资料\login_js.js" />
     <Content Include="Web.config" />
     <Content Include="前端基础\Html+Css\Css3\HtmlPage1.html" />
     <Content Include="前端基础\Html+Css\Html5新特性\HtmlPage1.html" />
